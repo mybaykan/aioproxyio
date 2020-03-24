@@ -1,5 +1,5 @@
 # Asyncrhonous wrapper for proxycheck.io API
-[Proxtcheck.io API Documentation](https://proxycheck.io/api/) | [Query Flags](https://proxycheck.io/api/#query_flags)
+[Proxycheck.io API Documentation](https://proxycheck.io/api/) | [Query Flags](https://proxycheck.io/api/#query_flags)
 
 # Install
 pip3 install git+https://github.com/MertYakupBaykan/aioproxyio.git
