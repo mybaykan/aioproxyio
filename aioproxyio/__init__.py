@@ -17,6 +17,7 @@ class proxy_io:
 
 
         self.loop = asyncio.get_event_loop()
+
         if session:
             self.session = session
         else :
@@ -51,8 +52,10 @@ class proxy_io:
                     data[ip]["proxy"] = data[ip]["proxy"] == "yes"
 
                 return data[ip]
+
             else:
                 return False
+
 if __name__ == "__main__":
     async def example():
 
