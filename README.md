@@ -8,7 +8,7 @@ pip3 install git+https://github.com/MertYakupBaykan/aioproxyio.git
 # Example
 ```python
 import asyncio
-import aioproxyio
+from aioproxyio import proxy_io
 
 async def example():
 
