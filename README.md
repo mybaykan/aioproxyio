@@ -2,12 +2,13 @@
 [Proxycheck.io API Documentation](https://proxycheck.io/api/) | [Query Flags](https://proxycheck.io/api/#query_flags)
 
 # Install
+```
 pip3 install git+https://github.com/MertYakupBaykan/aioproxyio.git
-
+```
 # Example
 ```python
 import asyncio
-import aioproxyio
+from aioproxyio import proxy_io
 
 async def example():
 
