@@ -8,7 +8,7 @@ def get_requirements():
 setup(
     name='aioproxyio',
     version='0.0.2',
-    description='Asyncrhonous wrapper for proxycheck.io API',
+    description='Asynchronous wrapper for proxycheck.io API',
     author='Mert Yakup Baykan',
     author_email='mertbaykan007@gmail.com',
     license='Apache License 2.0',
