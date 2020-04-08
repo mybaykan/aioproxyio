@@ -24,21 +24,20 @@ class proxy_io:
             self.session = aiohttp.ClientSession(loop=self.loop)
 
 
-    async def get(self, ip: str, **kwargs):
+    async def get(self, ip: str, flags: dict):
         """
         gets infomation about the passed IP
-        ip,        REQUIRED     | Device IP.
-        kwargs,    NOT REQUIRED | proxycheck.io Flags.
+        ip,            REQUIRED     | Device IP.
+        parameters,    NOT REQUIRED | proxycheck.io Flags.
         """
         api_request_link =  self.api_route.format(ip)
 
-        if kwargs:
-            for arg in kwargs:
-                kwargs[arg] = int(kwargs[arg] == True)
+        if flags:
+            for flag in flags:
+                flags[flag] = int(flags[flag] == True)
 
-            api_request_link += urllib.parse.urlencode(kwargs)
+        async with self.session.get(api_request_link, params=flags) as resp:
 
-        async with self.session.get(api_request_link) as resp:
             if resp.status == 200:
                 data = await resp.json()
 
@@ -61,7 +60,7 @@ if __name__ == "__main__":
 
         test = proxy_io()
 
-        print(await test.get(ip="37.60.48.2", asn=True, vpn=True))
+        print(await test.get(ip="37.60.48.2",flags={'asn':True,'vpn':True}))
 
         await test.session.close()
 
