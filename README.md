@@ -14,7 +14,7 @@ async def example():
 
   test = proxy_io()
 
-  print(await test.get(ip="37.60.48.2", asn=True, vpn=True))
+  print(await test.get(ip="37.60.48.2", flags={'asn':True,'vpn':True}))
 
   await test.session.close()
 
